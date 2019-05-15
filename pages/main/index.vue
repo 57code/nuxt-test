@@ -2,11 +2,11 @@
   <div>
     <h1>
       商品列表
-      <router-link to="/admin">管理</router-link>
-      <router-link to="/cart">
+      <nuxt-link to="/admin">管理</nuxt-link>
+      <n-link to="/cart">
         购物车
         <span class="badge">{{count}}</span>
-      </router-link>
+      </n-link>
     </h1>
 
     <ul>
