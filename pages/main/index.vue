@@ -23,7 +23,6 @@ export default {
       script: [{ src: "https://cdn.jsdelivr.net/npm/jquery/dist/jquery.js" }]
     };
   },
-  layout: 'users',
   async asyncData({$axios, error}) {
     // asyncData时间点早于组件创建，所以不能用this访问组件实例
     const result = await $axios.$get('/api/goods')

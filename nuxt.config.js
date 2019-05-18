@@ -37,7 +37,7 @@ module.exports = {
   plugins: [
     "@/plugins/element-ui",
     "@/plugins/api-inject",
-    {src:'@/plugins/axios', mode: 'client'}
+    '@/plugins/axios'
   ],
 
   /*

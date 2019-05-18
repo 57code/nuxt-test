@@ -8,8 +8,6 @@
 <script>
 export default {
   async asyncData(ctx) {
-      console.log(ctx);
-      
       const { $axios, params, error } = ctx;
     // asyncData中不能使用this获取组件实例
     // 但是可以通过上下文获取相关数据
