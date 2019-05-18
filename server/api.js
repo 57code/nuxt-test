@@ -1,9 +1,16 @@
+const Koa = require("koa");
+const bodyparser = require("koa-bodyparser");
 const router = require("koa-router")({ prefix: "/api" });
+
+const app = new Koa();
+
+// 设置cookie加密秘钥
+app.keys = ["some secret", "another secret"];
+
 const goods = [
   { id: 1, text: "Web全栈架构师", price: 1000 },
   { id: 2, text: "Python架构师", price: 1000 }
 ];
-
 
 // /api/goods
 router.get("/goods", ctx => {
@@ -30,4 +37,7 @@ router.post("/login", ctx => {
   }
 });
 
-module.exports = router;
+app.use(bodyparser());
+app.use(router.routes());
+
+app.listen(8080);

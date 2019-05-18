@@ -1,13 +1,8 @@
 const Koa = require("koa");
 const consola = require("consola");
 const { Nuxt, Builder } = require("nuxt");
-// 解析post数据
-const bodyparser = require("koa-bodyparser");
-const api = require("./api");
 
 const app = new Koa();
-// 设置cookie加密秘钥
-app.keys = ["some secret", "another secret"];
 
 // Import and Set Nuxt.js options
 let config = require("../nuxt.config.js");
@@ -20,7 +15,7 @@ async function start() {
   const {
     host = process.env.HOST || "127.0.0.1",
     port = process.env.PORT || 3000
-  } = nuxt.options.server;
+  } = nuxt.options.server;  
 
   // Build in development
   if (config.dev) {
@@ -29,10 +24,6 @@ async function start() {
   } else {
     await nuxt.ready();
   }
-
-  // 解析post数据并注册路由
-  app.use(bodyparser());
-  app.use(api.routes());
 
   // 页面渲染
   app.use(ctx => {

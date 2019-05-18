@@ -2,7 +2,7 @@ const pkg = require("./package");
 
 module.exports = {
   mode: "universal",
-
+  
   /*
    ** Headers of the page
    */
@@ -43,13 +43,13 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/axios"],
-  // axios: {
-  //   proxy: true
-  // },
-  // proxy: {
-  //   "/api": "http://localhost:8080"
-  // },
+  modules: ["@nuxtjs/axios", "cookie-universal-nuxt"],
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    "/api": "http://localhost:8080"
+  },
   /*
    ** Build configuration
    */
