@@ -31,15 +31,20 @@ module.exports = {
    */
   plugins: [
     "@/plugins/element-ui",
-    "@/plugins/state-subscribe",
+    "@/plugins/state-init",
     "@/plugins/api-inject"
   ],
 
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/axios"],
-
+  modules: [["@nuxtjs/axios"], "cookie-universal-nuxt"],
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    "/api": "http://localhost:8080"
+  },
   /*
    ** Build configuration
    */

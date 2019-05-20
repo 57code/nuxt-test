@@ -41,11 +41,7 @@ export default {
     ...mapGetters({ total: "cart/total" })
   },
   methods: {
-    ...mapMutations({
-      toggle: "cart/toggle",
-      add: "cart/add",
-      minus: "cart/minus"
-    })
+    ...mapMutations("cart", ["toggle", "add", "minus"])
   }
 };
 </script>

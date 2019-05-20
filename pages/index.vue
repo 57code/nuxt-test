@@ -2,11 +2,6 @@
   <div>
     <h1>
       商品列表
-      <nuxt-link to="/admin">管理</nuxt-link>
-      <n-link to="/cart">
-        购物车
-        <span class="badge">{{count}}</span>
-      </n-link>
     </h1>
 
     <ul>
@@ -29,25 +24,11 @@ export default {
     }
     error({ statusCode: 400, message: "数据查询失败" });
   },
-  computed: {
-    ...mapGetters({ count: "cart/count" })
-  },
+  
   methods: {
     ...mapMutations({ addCart: "cart/addCart" })
   }
 };
 </script>
 
-<style>
-a {
-  text-decoration: none;
-  font-size: 20px;
-}
-.badge {
-  border-radius: 50%;
-  background: red;
-  color: white;
-  font-size: 14px;
-  padding: 0px 5px;
-}
-</style>
+

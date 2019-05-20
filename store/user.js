@@ -1,24 +1,24 @@
 export const state = () => ({
-  user: null
+  token: null
 });
 
 export const mutations = {
-  init(state, user) {
-    state.user = user;
+  init(state, token) {
+    state.token = token;
   }
 };
 
 export const getters = {
   isLogin(state) {
-    return !!state.user;
+    return !!state.token;
   }
 };
 
 export const actions = {
   login({ commit }, u) {
-    return this.$login(u).then(({ ok, user }) => {
+    return this.$login(u).then(({ ok, token }) => {
       if (ok) {
-        commit("init", user);
+        commit("init", token);
       }
       return !!ok;
     });
