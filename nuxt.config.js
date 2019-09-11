@@ -19,6 +19,18 @@ module.exports = {
     ]
   },
 
+  router: {
+    extendRoutes (routes, resolve) {
+      console.log(routes);
+      
+      routes.push({
+        name: "foo",
+        path: "/foo",
+        component: resolve(__dirname, "pages/admin.vue")
+      });
+    }
+  },
+
   /*
   ** Customize the progress-bar color
   */
@@ -42,8 +54,16 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios'
   ],
 
+  axios: {
+    proxy: true
+  },
+
+  proxy: {
+    '/api': 'http://localhost:8080'
+  },
   /*
   ** Build configuration
   */

@@ -1,5 +1,11 @@
 <template>
   <div>
+    <nav>
+      <!-- 预加载 -->
+      <nuxt-link to="/">首页</nuxt-link>
+      <n-link to="/admin" no-prefetch>管理页</n-link>
+      <NLink to="/login">登录页</NLink>
+    </nav>
     <nuxt />
   </div>
 </template>
