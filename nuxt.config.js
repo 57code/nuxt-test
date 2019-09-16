@@ -1,6 +1,5 @@
 const pkg = require('./package')
 
-
 module.exports = {
   mode: 'universal',
 
@@ -20,6 +19,7 @@ module.exports = {
   },
 
   router: {
+    // middleware: ['auth'],
     extendRoutes (routes, resolve) {
       console.log(routes);
       
@@ -47,14 +47,17 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    '@/plugins/api-inject',
+    '@/plugins/interceptor',
   ],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'cookie-universal-nuxt'
   ],
 
   axios: {

@@ -25,6 +25,7 @@ router.get("/detail", ctx => {
   };
 });
 
+// post /api/login
 router.post("/login", ctx => {
   const user = ctx.request.body;
   if (user.username === "jerry" && user.password === "123") {
