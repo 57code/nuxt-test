@@ -24,18 +24,6 @@ module.exports = {
   */
   loading: { color: '#fff' },
 
-  // 路由配置
-  router: {
-    extendRoutes(routes, resolve) {
-      // routes:生成的路由表
-      routes.push({
-        name:'foo',
-        path: '/foo',
-        component: resolve(__dirname, 'pages/custom.vue')
-      })
-    }
-  },
-
   /*
   ** Global CSS
   */
