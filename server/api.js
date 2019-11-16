@@ -14,6 +14,7 @@ const goods = [
 
 // 配置路由
 // 获取产品列表
+// http://localhost:8080/api/goods
 router.get("/goods", ctx => {
   ctx.body = {
     ok: 1,

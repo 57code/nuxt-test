@@ -25,6 +25,7 @@ async function start() {
     await nuxt.ready()
   }
 
+  // 监听所有路由
   app.use(ctx => {
     ctx.status = 200
     ctx.respond = false // Bypass Koa's built-in response handling
